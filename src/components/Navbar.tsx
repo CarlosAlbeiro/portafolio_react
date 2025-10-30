@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, Menu, X, Download } from "lucide-react";
 import { useTheme } from "next-themes";
+import logo from "@/assets/logo.jpg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,7 +51,7 @@ const Navbar = () => {
             className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
           >
             <img
-              src="../assets/logo.png" 
+              src={logo}
               alt="Logo Portafolio"
               className="h-[80px] w-auto" 
             />
