@@ -21,7 +21,7 @@ const Navbar = () => {
     { name: "Sobre Mí", href: "#about" },
     { name: "Experiencia", href: "#experience" },
     { name: "Habilidades", href: "#skills" },
-    { name: "Proyectos", href: "#projects" },
+    // { name: "Proyectos", href: "#projects" },
     { name: "Contacto", href: "#contact" },
   ];
 
@@ -49,7 +49,11 @@ const Navbar = () => {
             }}
             className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
           >
-            Portfolio
+            <img
+              src="src\assets\logo.png" // 👉 coloca aquí la ruta de tu imagen
+              alt="Logo Portafolio"
+              className="h-[80px] w-auto" // ajusta el tamaño según necesites
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -81,10 +85,10 @@ const Navbar = () => {
                 <Moon className="h-5 w-5" />
               )}
             </Button>
-            <Button className="gap-2">
+            {/* <Button className="gap-2">
               <Download className="h-4 w-4" />
               Descargar CV
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -131,10 +135,10 @@ const Navbar = () => {
                     <Moon className="h-5 w-5" />
                   )}
                 </Button>
-                <Button className="flex-1 gap-2">
+                {/* <Button className="flex-1 gap-2">
                   <Download className="h-4 w-4" />
                   Descargar CV
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>

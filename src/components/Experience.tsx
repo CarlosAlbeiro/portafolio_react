@@ -4,36 +4,44 @@ import { Briefcase } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      period: "2022 - Presente",
-      title: "Senior Software Engineer",
-      company: "Tech Innovations Inc.",
+      period: "2024 - 2025",
+      title: "Auxiliar de soporte TI, Desarrollador de Software",
+      company: "DATEC SYSTEMS S.A.S",
       description:
-        "Liderazgo de equipo de 6 desarrolladores en la creación de una plataforma SaaS utilizada por más de 10,000 usuarios. Implementación de arquitectura de microservicios y mejora del rendimiento en un 40%.",
-      technologies: ["React", "Node.js", "AWS", "Docker", "Kubernetes"],
+        "Instalador y soporte de software empresarial, atención y soporte a usuarios finales. Implementación y mantenimiento de infraestructura tecnológica, Desarrollador de software modular para necesidades internas de la empresa.",
+      technologies: [ "Python", "SQL Sever", "PHP", "JavaScript", "HTML", "CSS", "Node.js","bootstrap","WordPress"],
+    },
+     {
+      period: "2023 - 2024",
+      title: "Desarrollador",
+      company: "Happy sleep",
+      description:
+        "Desarrollo de software corporativos, cubriendo necesidades especificas de la empresa. Aprendizaje de buenas prácticas de desarrollo y trabajo en equipo ágil.",
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL","Node.js","bootstrap","WordPress","SQL Server"],
+    },
+    {
+      period: "2023 - 2023",
+      title: "Desarrollador (pasantias)",
+      company: "Happy sleep",
+      description:
+        "Desarrollo de software corporativos, cubriendo necesidades especificas de la empresa. Aprendizaje de buenas prácticas de desarrollo y trabajo en equipo ágil.",
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL","Node.js","bootstrap","WordPress","SQL Server"],
     },
     {
       period: "2020 - 2022",
-      title: "Full Stack Developer",
-      company: "Digital Solutions Corp.",
+      title: "Freelance",
+      company: "",
       description:
-        "Desarrollo de aplicaciones web y móviles para clientes del sector financiero. Colaboración directa con stakeholders para definir requisitos y entregar soluciones de alta calidad.",
-      technologies: ["Vue.js", "Python", "PostgreSQL", "Redis", "CI/CD"],
+        "Creacion de software a la medida para emprendimeinto y clientes, abarcando desde sitios web hasta desarrollos de software. Gestión completa del ciclo de vida del desarrollo de software.",
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL","bootstrap"],
     },
-    {
-      period: "2018 - 2020",
-      title: "Frontend Developer",
-      company: "StartupHub",
+     {
+      period: "2019 - 2020",
+      title: "Desarrolador Junior (pasantias)",
+      company: "Institucion universitaria EAM",
       description:
-        "Creación de interfaces de usuario modernas y responsivas para múltiples productos. Implementación de design systems y componentes reutilizables.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "GraphQL"],
-    },
-    {
-      period: "2017 - 2018",
-      title: "Junior Developer",
-      company: "Web Agency Pro",
-      description:
-        "Desarrollo de sitios web corporativos y e-commerce. Aprendizaje de buenas prácticas de desarrollo y trabajo en equipo ágil.",
-      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+        "Perfil de trabajo enfocado en el apoyo en el área de sistemas, mantenimientos de computadores, corrección y soporte en los sistemas operativos y plataformas de la universidad.",
+      technologies: ["Redes", "Hardware de compuatdores", "Java","PHP"],
     },
   ];
 
@@ -56,7 +64,7 @@ const Experience = () => {
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className={`relative mb-12 ${
+                className={` relative mb-12 flex flex-col items-center md:items-start ${
                   index % 2 === 0 ? "md:pr-1/2" : "md:pl-1/2 md:text-right"
                 }`}
               >
@@ -65,7 +73,7 @@ const Experience = () => {
                     index % 2 === 0 ? "" : "md:flex-row-reverse"
                   }`}
                 >
-                  <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg z-10">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg">
                     <Briefcase className="h-6 w-6 text-primary-foreground" />
                   </div>
                   

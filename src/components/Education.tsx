@@ -3,42 +3,56 @@ import { GraduationCap, Award } from "lucide-react";
 
 const Education = () => {
   const education = [
-    {
-      degree: "Maestría en Ciencias de la Computación",
-      institution: "Universidad Tecnológica Nacional",
-      period: "2016 - 2018",
+      {
+      degree: "Ingeniero de software",
+      institution: "Intitucion universitaria EAM",
+      period: "2025 - actualidad",
       description:
-        "Especialización en Inteligencia Artificial y Machine Learning. Tesis sobre optimización de algoritmos de aprendizaje profundo.",
+        "Estudios en curso enfocados en ingeniería de software, abarcando áreas como desarrollo de software, pruebas y aseguramiento de calidad, y gestión de proyectos.",
+    },
+     {
+      degree: "Ingeniero de sistemas",
+      institution: "Universidad del Quindio",
+      period: "2022 - sin finalizar",
+      description:
+        "Estudios en curso enfocados en ingeniería de sistemas, abarcando áreas como desarrollo de software, redes y bases de datos.",
     },
     {
-      degree: "Ingeniería en Sistemas",
-      institution: "Instituto Politécnico Superior",
-      period: "2012 - 2016",
+      degree: "Tecnológo en análisis y desarrollo de sistemas de información",
+      institution: "SENA",
+      period: "2022 - 2024",
       description:
-        "Formación integral en desarrollo de software, bases de datos, redes y arquitectura de sistemas. Promedio: 9.2/10",
+        "Formación avanzada en desarrollo de software, análisis de sistemas y gestión de proyectos. Proyecto final enfocado en el desarrollo de una plataforma web para la gestión de informacion.",
+    },
+    {
+      degree: "Tecnico en desarrollo de software",
+      institution: "SENA",
+      period: "2018 - 2019",
+      description:
+        "Formación integral en desarrollo de software, bases de datos y ciclo de vida del software. Proyecto final enfocado en desarrollo de una aplicación web para gestión inventarios y ventas.",
     },
   ];
 
   const certifications = [
     {
-      name: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
+      name: "Curso de Introducción al Despliegue de Aplicaciones",
+      issuer: "PLATZI",
       year: "2023",
     },
     {
-      name: "Professional Scrum Master (PSM I)",
-      issuer: "Scrum.org",
-      year: "2022",
+      name: "Curso de Pensamiento Lógico: Algoritmos y Diagramas de Flujo",
+      issuer: "PLATZI",
+      year: "2023",
     },
     {
-      name: "Google Cloud Professional Developer",
-      issuer: "Google Cloud",
-      year: "2021",
+      name: "Curso de Pensamiento Lógico: Manejo de Datos, Estructuras y Funciones",
+      issuer: "PLATZI",
+      year: "2023",
     },
     {
-      name: "MongoDB Certified Developer",
-      issuer: "MongoDB University",
-      year: "2020",
+      name: "Diseño y administracion de sitios web",
+      issuer: "SENA",
+      year: "2018",
     },
   ];
 

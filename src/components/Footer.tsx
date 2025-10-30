@@ -1,4 +1,3 @@
-import { Heart } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -6,9 +5,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <p className="text-muted-foreground flex items-center justify-center gap-2">
-            © {new Date().getFullYear()} Portfolio Profesional. Diseñado con
-            <Heart className="h-4 w-4 fill-accent text-accent" />
-            y tecnología moderna.
+            © {new Date().getFullYear()} CAGG
           </p>
         </div>
       </div>

@@ -6,22 +6,22 @@ const About = () => {
     {
       icon: Code,
       title: "Desarrollo Full-Stack",
-      description: "Experiencia en frontend y backend con tecnologías modernas",
+      description: "Experiencia en frontend y backend con tecnologías JavaScript.",
     },
     {
       icon: Lightbulb,
       title: "Soluciones Innovadoras",
-      description: "Enfoque creativo para resolver problemas complejos",
+      description: "Enfoque creativo para resolver problemas sencillo y complejos.",
     },
     {
       icon: Users,
       title: "Trabajo en Equipo",
-      description: "Colaboración efectiva y liderazgo de proyectos",
+      description: "Colaboración efectiva, asertiva y liderazgo de proyectos.",
     },
     {
       icon: Zap,
       title: "Entrega Rápida",
-      description: "Metodologías ágiles y desarrollo iterativo",
+      description: "Metodologías ágiles y desarrollo iterativo pactando plazos de entrega coherentes.",
     },
   ];
 
@@ -38,21 +38,16 @@ const About = () => {
 
           <Card className="p-8 md:p-12 shadow-card mb-12">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Soy un desarrollador de software con más de 5 años de experiencia en
-              el diseño y desarrollo de aplicaciones web y móviles. Mi pasión por
-              la tecnología comenzó en la universidad y desde entonces he trabajado
-              en proyectos que van desde startups hasta empresas Fortune 500.
+              Soy un desarrollador de software con de 4 años de experiencia en el desarrollo de software e implemewntacion de herramientas digitales, especializado en Java Script y frameworks como React y Node.js. 
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Me especializo en crear soluciones escalables y eficientes utilizando
-              las últimas tecnologías y mejores prácticas de la industria. Mi
-              enfoque se centra en la calidad del código, la experiencia del
-              usuario y la resolución de problemas reales.
+              He logrado desarrollar diferentes proyectos enfocados en necesidades puntuales de clientes, abarcando desde software empresarial y software a la medida hasta desarrollo de estrategias de marketing digital.
+              Me apaciona este mundo desde mi graducacion del colegio donde sabia que queria dedicarme al mundo tecnologico abrancando la mayoria de campos del mismo.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Cuando no estoy programando, disfruto contribuir a proyectos de
-              código abierto, escribir artículos técnicos y mentorear a
-              desarrolladores junior.
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Me especializo en crear soluciones digitales escalables y eficientes utilizando tecnologías de acuerdo a los requerimientos presentados. 
+              Mi enfoque se centra en el analisis y desarrollo de soluciones por medio de herramientas digitales y software, la experiencia del
+              usuario y la resolución de problemas reales.
             </p>
           </Card>
 

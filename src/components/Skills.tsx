@@ -6,22 +6,22 @@ const Skills = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const technicalSkills = [
-    { name: "React / Next.js", level: 95 },
-    { name: "TypeScript / JavaScript", level: 90 },
-    { name: "Node.js / Express", level: 85 },
-    { name: "Python / Django", level: 80 },
-    { name: "SQL / NoSQL Databases", level: 85 },
-    { name: "AWS / Cloud Services", level: 75 },
-    { name: "Docker / Kubernetes", level: 70 },
-    { name: "Git / CI/CD", level: 90 },
+    { name: "React / Next.js", level: 65 },
+    { name: "TypeScript / JavaScript", level: 85 },
+    { name: "Node.js / Express", level: 75 },
+    { name: "Python", level: 55 },
+    { name: "SQL / Databases", level: 70 },
+    { name: "Git ", level: 65 },
+    { name: "HTML ", level: 75 },
+    { name: "CSS ", level: 75 },
   ];
 
   const softSkills = [
-    { name: "Liderazgo de Equipo", level: 90 },
+    { name: "Liderazgo de Equipo", level: 70 },
     { name: "Comunicación", level: 95 },
-    { name: "Resolución de Problemas", level: 95 },
-    { name: "Gestión del Tiempo", level: 85 },
-    { name: "Pensamiento Crítico", level: 90 },
+    { name: "Resolución de Problemas", level: 96 },
+    { name: "Gestión del Tiempo", level: 70 },
+    { name: "Pensamiento Crítico", level: 95 },
     { name: "Adaptabilidad", level: 95 },
   ];
 

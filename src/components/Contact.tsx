@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, Link, MessageCircle  } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
@@ -28,39 +28,51 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "contacto@ejemplo.com",
-      href: "mailto:contacto@ejemplo.com",
+      value: "devcagg@gmail.com",
+      href: "mailto:devcagg@gmail.com",
     },
     {
       icon: Phone,
       label: "Teléfono",
-      value: "+34 123 456 789",
-      href: "tel:+34123456789",
+      value: "+57 300 518 3772",
+      href: "https://wa.me/573005183772",
     },
     {
       icon: MapPin,
       label: "Ubicación",
-      value: "Madrid, España",
+      value: "Quindio, Colombia",
       href: "#",
     },
   ];
 
   const socialLinks = [
+     {
+      icon: MessageCircle,
+      label: "Mensaje",
+      href: "https://wa.me/573005183772",
+    },
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/CarlosAlbeiro",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/carlos-albeiro-galeano-gomez-",
+    },
+      {
+      icon: Instagram,
+      label: "Instagram",
+      href: "https://www.instagram.com/dev.cagg",
     },
     {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com",
+      icon: Link,
+      label: "Beacons",
+      href: "https://beacons.ai/cagg",
     },
+   
+   
   ];
 
   return (
