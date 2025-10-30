@@ -50,7 +50,7 @@ const Navbar = () => {
             className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
           >
             <img
-              src="src\assets\logo.png" // 👉 coloca aquí la ruta de tu imagen
+              src="../src/assets/logo.png" // 👉 coloca aquí la ruta de tu imagen
               alt="Logo Portafolio"
               className="h-[80px] w-auto" // ajusta el tamaño según necesites
             />
