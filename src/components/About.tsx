@@ -31,7 +31,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Sobre Mí
+              Sobre mí
             </h2>
             <div className="w-20 h-1 bg-accent mx-auto rounded-full"></div>
           </div>
@@ -42,7 +42,7 @@ const About = () => {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               He logrado desarrollar diferentes proyectos enfocados en necesidades puntuales de clientes, abarcando desde software empresarial y software a la medida hasta desarrollo de estrategias de marketing digital.
-              Me apaciona este mundo desde mi graducacion del colegio donde sabia que queria dedicarme al mundo tecnologico abrancando la mayoria de campos del mismo.
+              Me apasiona este mundo desde mi graducacion del colegio donde sabia que queria dedicarme al mundo tecnologico abrancando la mayoria de campos del mismo.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Me especializo en crear soluciones digitales escalables y eficientes utilizando tecnologías de acuerdo a los requerimientos presentados. 
