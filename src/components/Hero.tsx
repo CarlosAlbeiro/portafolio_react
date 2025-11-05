@@ -62,11 +62,11 @@ const Hero = () => {
 
           <motion.h1 
           variants={contenedor}
-          initial="hidden"
-          animate="visible"
-          whileInView="visible" // 👈 se activa solo cuando entra en pantalla
-          viewport={{ once: false }} // "once" = solo una vez, "amount" = % visible
-          className="text-5xl md:text-7xl font-bold text-white mb-6"
+          
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-center break-words overflow-hidden px-2"
           >
             {letras.map((char, index) => (
               <motion.span key={index} variants={letra}>
