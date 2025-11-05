@@ -1,12 +1,41 @@
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, Link, MessageCircle, ArrowRight } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 
+ const contenedor = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05, // retrasa cada letra
+      },
+    }
+  }
+
 const Hero = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const texto = "Desarrollador de Software";
+  const letras = texto.split("");
+
+  const contenedor = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05, // retrasa cada letra
+      },
+    },
+  };
+
+  const letra = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -31,9 +60,20 @@ const Hero = () => {
             />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up">
-            Desarrollador de Software
-          </h1>
+          <motion.h1 
+          variants={contenedor}
+          initial="hidden"
+          animate="visible"
+          whileInView="visible" // 👈 se activa solo cuando entra en pantalla
+          viewport={{ once: false }} // "once" = solo una vez, "amount" = % visible
+          className="text-5xl md:text-7xl font-bold text-white mb-6"
+          >
+            {letras.map((char, index) => (
+              <motion.span key={index} variants={letra}>
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.h1>
 
           <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in-up [animation-delay:200ms]">
             Creando soluciones innovadoras con tecnología practicas y eficientes.
@@ -65,52 +105,106 @@ const Hero = () => {
           </div>
 
           <div className="flex gap-6 justify-center animate-fade-in-up [animation-delay:800ms]">
-            <a
+            <motion.a
               href="https://wa.me/573005183772"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transition-colors"
+              className="text-white/70 hover:text-white transition-colors p-2 rounded-full cursor-pointer"
+              whileHover={{
+                scale: 1.3, // agranda el icono
+                boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+              }}
             >
               <MessageCircle className="h-10 w-10" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://github.com/CarlosAlbeiro"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transition-colors"
+              className="text-white/70 hover:text-white transition-colors p-2 rounded-full cursor-pointer"
+              whileHover={{
+                scale: 1.3, // agranda el icono
+                boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+              }}
             >
               <Github className="h-10 w-10" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://www.linkedin.com/in/carlos-albeiro-galeano-gomez-"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transition-colors"
+               className="text-white/70 hover:text-white transition-colors p-2 rounded-full cursor-pointer"
+              whileHover={{
+                scale: 1.3, // agranda el icono
+                boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+              }}
             >
               <Linkedin className="h-10 w-10" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://www.instagram.com/dev.cagg"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transition-colors"
+               className="text-white/70 hover:text-white transition-colors p-2 rounded-full cursor-pointer"
+              whileHover={{
+                scale: 1.3, // agranda el icono
+                boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+              }}
             >
               <Instagram className="h-10 w-10" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://beacons.ai/cagg"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transition-colors"
+               className="text-white/70 hover:text-white transition-colors p-2 rounded-full cursor-pointer"
+              whileHover={{
+                scale: 1.3, // agranda el icono
+                boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+              }}
             >
               <Link className="h-10 w-10" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="mailto:devcagg@gmail.com"
-              className="text-white/70 hover:text-white transition-colors"
+               className="text-white/70 hover:text-white transition-colors p-2 rounded-full cursor-pointer"
+              whileHover={{
+                scale: 1.3, // agranda el icono
+                boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+              }}
             >
               <Mail className="h-10 w-10" />
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>
