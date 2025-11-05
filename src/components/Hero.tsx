@@ -20,7 +20,7 @@ const Hero = () => {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const texto = "Desarrollador de Software";
+  const texto = "Desarrollador de \nSoftware";
   const letras = texto.split("");
 
   const contenedor = {
@@ -120,7 +120,7 @@ const Hero = () => {
                 damping: 15,
               }}
             >
-              <MessageCircle className="h-10 w-10" />
+              <MessageCircle className="h-9 w-9" />
             </motion.a>
             <motion.a
               href="https://github.com/CarlosAlbeiro"
@@ -137,7 +137,7 @@ const Hero = () => {
                 damping: 15,
               }}
             >
-              <Github className="h-10 w-10" />
+              <Github className="h-9 w-9" />
             </motion.a>
             <motion.a
               href="https://www.linkedin.com/in/carlos-albeiro-galeano-gomez-"
@@ -154,7 +154,7 @@ const Hero = () => {
                 damping: 15,
               }}
             >
-              <Linkedin className="h-10 w-10" />
+              <Linkedin className="h-9 w-9" />
             </motion.a>
             <motion.a
               href="https://www.instagram.com/dev.cagg"
@@ -171,7 +171,7 @@ const Hero = () => {
                 damping: 15,
               }}
             >
-              <Instagram className="h-10 w-10" />
+              <Instagram className="h-9 w-9" />
             </motion.a>
             <motion.a
               href="https://beacons.ai/cagg"
@@ -188,13 +188,13 @@ const Hero = () => {
                 damping: 15,
               }}
             >
-              <Link className="h-10 w-10" />
+              <Link className="h-9 w-9" />
             </motion.a>
             <motion.a
               href="mailto:devcagg@gmail.com"
                className="text-white/70 hover:text-white transition-colors p-2 rounded-full cursor-pointer"
               whileHover={{
-                scale: 1.3, // agranda el icono
+              scale: 1.3, // agranda el icono
                 boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
               }}
               transition={{
@@ -203,7 +203,7 @@ const Hero = () => {
                 damping: 15,
               }}
             >
-              <Mail className="h-10 w-10" />
+              <Mail className="h-9 w-9" />
             </motion.a>
           </div>
         </div>
