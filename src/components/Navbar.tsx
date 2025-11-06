@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Inicio", href: "#hero" },
-    { name: "Sobre Mí", href: "#about" },
+    { name: "Sobre mí", href: "#about" },
     { name: "Experiencia", href: "#experience" },
     { name: "Habilidades", href: "#skills" },
     // { name: "Proyectos", href: "#projects" },
@@ -34,14 +34,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed p-0 m-0 top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-background/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto p-0 m-0">
+        <div className="flex items-center justify-between px-2">
           <a
             href="#hero"
             onClick={(e) => {
@@ -49,7 +49,7 @@ const Navbar = () => {
               scrollToSection("#hero");
             }}
             // className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
-            className={`text-sm font-medium transition-colors ${
+            className={`text-sm font-medium transition-colors p-0 m-0 ${
               !isScrolled
                 ? theme === "light"
                   ? "text-white hover:text-white/80"
@@ -60,7 +60,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Logo Portafolio"
-              className="h-[80px] w-auto" 
+              className="h-[70px] w-auto" 
             />
           </a>
 
@@ -82,13 +82,21 @@ const Navbar = () => {
                       : "text-foreground/80 hover:text-primary"
                     : "text-foreground/80 hover:text-primary"
                 }`}
-              >
+              > <b>
                 {item.name}
+                </b>
               </a>
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className={`hidden md:flex items-center gap-4 border-border ${
+                  !isScrolled
+                    ? theme === "light"
+                      ? "text-white hover:text-white/80"
+                      : "text-foreground/80 hover:text-primary"
+                    : "text-foreground/80 hover:text-primary"
+          
+                }`}>
             <Button
               variant="ghost"
               size="icon"
@@ -146,7 +154,6 @@ const Navbar = () => {
                 </a>
               ))}
               <div 
-            
                className={`flex items-center gap-4 pt-4 border-t border-border ${
                   !isScrolled
                     ? theme === "light"
