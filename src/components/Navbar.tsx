@@ -48,7 +48,14 @@ const Navbar = () => {
               e.preventDefault();
               scrollToSection("#hero");
             }}
-            className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            // className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            className={`text-sm font-medium transition-colors ${
+              !isScrolled
+                ? theme === "light"
+                  ? "text-white hover:text-white/80"
+                  : "text-foreground/80 hover:text-primary"
+                : "text-foreground/80 hover:text-primary"
+            }`}
           >
             <img
               src={logo}
@@ -67,7 +74,14 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                // className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  !isScrolled
+                    ? theme === "light"
+                      ? "text-white hover:text-white/80"
+                      : "text-foreground/80 hover:text-primary"
+                    : "text-foreground/80 hover:text-primary"
+                }`}
               >
                 {item.name}
               </a>
@@ -119,12 +133,27 @@ const Navbar = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                  // className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                   className={`text-sm font-medium transition-colors ${
+                    !isScrolled
+                      ? theme === "light"
+                        ? "text-white hover:text-white/80"
+                        : "text-foreground/80 hover:text-primary"
+                      : "text-foreground/80 hover:text-primary"
+                  }`}
                 >
                   {item.name}
                 </a>
               ))}
-              <div className="flex items-center gap-4 pt-4 border-t border-border">
+              <div 
+            
+               className={`flex items-center gap-4 pt-4 border-t border-border ${
+                  !isScrolled
+                    ? theme === "light"
+                      ? "text-white hover:text-white/80"
+                      : "text-foreground/80 hover:text-primary"
+                    : "text-foreground/80 hover:text-primary"
+                }`}>
                 <Button
                   variant="ghost"
                   size="icon"

@@ -62,11 +62,10 @@ const Hero = () => {
 
           <motion.h1 
           variants={contenedor}
-          
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.3 }}
-  className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-center break-words overflow-hidden px-2"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-center break-words overflow-hidden px-2"
           >
             {letras.map((char, index) => (
               <motion.span key={index} variants={letra}>
@@ -104,7 +103,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="flex gap-6 justify-center animate-fade-in-up [animation-delay:800ms]">
+          <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-6 mt-4 px-4 animate-fade-in-up [animation-delay:800ms]">
             <motion.a
               href="https://wa.me/573005183772"
               target="_blank"
@@ -113,6 +112,10 @@ const Hero = () => {
               whileHover={{
                 scale: 1.3, // agranda el icono
                 boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
+              }}
+              whileTap={{
+                scale: 1.2, // efecto al tocar en móvil
+                boxShadow: "0 0 20px rgba(247, 247, 247, 0.8)",
               }}
               transition={{
                 type: "spring",
@@ -131,6 +134,10 @@ const Hero = () => {
                 scale: 1.3, // agranda el icono
                 boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
               }}
+              whileTap={{
+                scale: 1.2, // efecto al tocar en móvil
+                boxShadow: "0 0 20px rgba(247, 247, 247, 0.8)",
+              }}
               transition={{
                 type: "spring",
                 stiffness: 300,
@@ -147,6 +154,10 @@ const Hero = () => {
               whileHover={{
                 scale: 1.3, // agranda el icono
                 boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
+              }}
+              whileTap={{
+                scale: 1.2, // efecto al tocar en móvil
+                boxShadow: "0 0 20px rgba(247, 247, 247, 0.8)",
               }}
               transition={{
                 type: "spring",
@@ -165,6 +176,10 @@ const Hero = () => {
                 scale: 1.3, // agranda el icono
                 boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
               }}
+              whileTap={{
+                scale: 1.2, // efecto al tocar en móvil
+                boxShadow: "0 0 20px rgba(247, 247, 247, 0.8)",
+              }}
               transition={{
                 type: "spring",
                 stiffness: 300,
@@ -182,6 +197,10 @@ const Hero = () => {
                 scale: 1.3, // agranda el icono
                 boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
               }}
+              whileTap={{
+                  scale: 1.2, // efecto al tocar en móvil
+                  boxShadow: "0 0 20px rgba(247, 247, 247, 0.8)",
+                }}
               transition={{
                 type: "spring",
                 stiffness: 300,
@@ -194,8 +213,12 @@ const Hero = () => {
               href="mailto:devcagg@gmail.com"
                className="text-white/70 hover:text-white transition-colors p-2 rounded-full cursor-pointer"
               whileHover={{
-              scale: 1.3, // agranda el icono
+                scale: 1.3, // agranda el icono
                 boxShadow: "0 0 25px rgba(247, 247, 247, 1)", // resplandor verde tipo WhatsApp
+              }}
+              whileTap={{
+                scale: 1.2, // efecto al tocar en móvil
+                boxShadow: "0 0 20px rgba(247, 247, 247, 0.8)",
               }}
               transition={{
                 type: "spring",
