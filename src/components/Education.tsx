@@ -1,7 +1,10 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { GraduationCap, Award } from "lucide-react";
 
 const Education = () => {
+  const [selectedCert, setSelectedCert] = useState<number | null>(null);
   const education = [
       {
       degree: "Ingeniero de software",
@@ -34,26 +37,49 @@ const Education = () => {
   ];
 
   const certifications = [
+     {
+      name: "Domina la IA con Gemini",
+      issuer: "Santader | Open academy - GOOGLE",
+      year: "2025",
+      preview: "src/assets/certificaciones/CERTIFICADO_DOMINA_IA_GEMINI_GOOGLE.jpg",
+      pdf: "src/assets/certificaciones/CERTIFICADO_DOMINA_IA_GEMINI_GOOGLE.pdf",
+    },
+     {
+      name: "Bootcamp Inteligencia Artificial Nivel Basico",
+      issuer: "TALENTO TECH",
+      year: "2025",
+      preview: "src/assets/certificaciones/CERTIFICADO_INTRODUCCION_INTELIGENCIA_ARTIFICIAL_BASICO_TIC.jpg",
+      pdf: "src/assets/certificaciones/CERTIFICADO_INTRODUCCION_INTELIGENCIA_ARTIFICIAL_BASICO_TIC.pdf",
+    },
     {
-      name: "Curso de Introducción al Despliegue de Aplicaciones",
+      name: "Introducción al Despliegue de Aplicaciones",
       issuer: "PLATZI",
       year: "2023",
+      preview: "src/assets/certificaciones/CERTIFICADO_INSTRODUCCION_DESPLIEGUE_APLICACIONES_PLATZI.jpg",
+      pdf: "src/assets/certificaciones/CERTIFICADO_INSTRODUCCION_DESPLIEGUE_APLICACIONES_PLATZI.pdf",
     },
     {
       name: "Curso de Pensamiento Lógico: Algoritmos y Diagramas de Flujo",
       issuer: "PLATZI",
       year: "2023",
+      preview: "/certificados/ia_basico.jpg",
+      pdf: "/certificados/ia_basico.pdf",
     },
     {
       name: "Curso de Pensamiento Lógico: Manejo de Datos, Estructuras y Funciones",
       issuer: "PLATZI",
       year: "2023",
+      preview: "/certificados/ia_basico.jpg",
+      pdf: "/certificados/ia_basico.pdf",
     },
     {
       name: "Diseño y administracion de sitios web",
       issuer: "SENA",
       year: "2018",
+      preview: "src/assets/certificaciones/CERTIFICADO_DISEÑO_ADMINISTRACION_SITIOS_WEB_SENA.jpg",
+      pdf: "src/assets/certificaciones/CERTIFICADO_DISEÑO_ADMINISTRACION_SITIOS_WEB_SENA.pdf",
     },
+    
   ];
 
   return (
@@ -98,7 +124,9 @@ const Education = () => {
               <Award className="h-8 w-8 text-accent" />
               Certificaciones
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {certifications.map((cert, index) => (
                 <Card
                   key={index}
@@ -120,7 +148,99 @@ const Education = () => {
                   </div>
                 </Card>
               ))}
+            </div> */}
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
+      {certifications.map((cert, index) => (
+        <div
+          key={index}
+          className="relative group cursor-pointer"
+          onMouseEnter={() => setSelectedCert(index)} // Hover en PC
+          onMouseLeave={() => setSelectedCert(null)} // Sale del hover
+          onClick={() => setSelectedCert(index)} // Tap en móvil
+        >
+          <Card className="p-5 shadow-card hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+            <div className="flex items-start gap-3">
+              <div className="p-2 bg-accent/10 rounded-lg">
+                <Award className="h-5 w-5 text-accent" />
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1">{cert.name}</h4>
+                <p className="text-sm text-muted-foreground">
+                  {cert.issuer}
+                </p>
+                <span className="text-xs text-accent font-semibold">
+                  {cert.year}
+                </span>
+              </div>
             </div>
+          </Card>
+
+          {/* 🖼️ Mini preview (hover en PC) */}
+          <AnimatePresence>
+            {selectedCert === index && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 10 }}
+                transition={{ duration: 0.25 }}
+                className="absolute left-1/2 -translate-x-1/2 bottom-full mb-3 z-50 hidden md:block"
+              >
+                <img
+                  src={cert.preview}
+                  alt={cert.name}
+                  className="w-72 h-auto rounded-lg shadow-lg border border-white/10"
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      ))}
+
+      {/* 📱 Modal para móviles */}
+      <AnimatePresence>
+        {selectedCert !== null && (
+          <motion.div
+            key="previewModal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4 md:hidden"
+            onClick={() => setSelectedCert(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white dark:bg-zinc-900 rounded-lg overflow-hidden shadow-2xl max-w-sm w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={certifications[selectedCert].preview}
+                alt={certifications[selectedCert].name}
+                className="w-full h-auto"
+                onClick={() =>
+                  window.open(certifications[selectedCert].pdf, "_blank")
+                }
+              />
+              <div className="p-3">
+                <h3 className="font-semibold text-lg">
+                  {certifications[selectedCert].name}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {certifications[selectedCert].issuer} —{" "}
+                  {certifications[selectedCert].year}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+
+
           </div>
         </div>
       </div>
