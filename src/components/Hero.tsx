@@ -92,7 +92,7 @@ const Hero = () => {
               Ver Estudios
               <ArrowRight className="h-5 w-5" />
             </Button> */}
-            <Button
+            {/* <Button
               size="lg"
               variant="outline"
               onClick={() => scrollToSection("#contact")}
@@ -100,7 +100,7 @@ const Hero = () => {
             >
               Contactar
               <Mail className="h-7 w-7" />
-            </Button>
+            </Button> */}
           </div>
 
           <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-6 mt-4 px-4 animate-fade-in-up [animation-delay:800ms]">

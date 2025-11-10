@@ -4,8 +4,10 @@ import { Card } from "@/components/ui/card";
 import { GraduationCap, Award } from "lucide-react";
 
 const Education = () => {
+  const [hoveredCert, setHoveredCert] = useState<number | null>(null);
   const [selectedCert, setSelectedCert] = useState<number | null>(null);
-  const education = [
+
+const education = [
       {
       degree: "Ingeniero de software",
       institution: "Intitucion universitaria EAM",
@@ -38,54 +40,58 @@ const Education = () => {
 
   const certifications = [
      {
+      name: "Que es la IA Generativa",
+      issuer: "Linkedin Learning",
+      year: "2025",
+      preview: "/certificaciones/CERTIFICADO_IA_GENERATIVA.jpg",
+      pdf: "/certificaciones/CERTIFICADO_IA_GENERATIVA.pdf",
+    },
+     {
       name: "Domina la IA con Gemini",
       issuer: "Santader | Open academy - GOOGLE",
       year: "2025",
-      preview: "src/assets/certificaciones/CERTIFICADO_DOMINA_IA_GEMINI_GOOGLE.jpg",
-      pdf: "src/assets/certificaciones/CERTIFICADO_DOMINA_IA_GEMINI_GOOGLE.pdf",
+      preview: "/certificaciones/CERTIFICADO_DOMINA_IA_GEMINI_GOOGLE.jpg",
+      pdf: "/certificaciones/CERTIFICADO_DOMINA_IA_GEMINI_GOOGLE.pdf",
     },
      {
       name: "Bootcamp Inteligencia Artificial Nivel Basico",
       issuer: "TALENTO TECH",
       year: "2025",
-      preview: "src/assets/certificaciones/CERTIFICADO_INTRODUCCION_INTELIGENCIA_ARTIFICIAL_BASICO_TIC.jpg",
-      pdf: "src/assets/certificaciones/CERTIFICADO_INTRODUCCION_INTELIGENCIA_ARTIFICIAL_BASICO_TIC.pdf",
+      preview: "/certificaciones/CERTIFICADO_INTRODUCCION_INTELIGENCIA_ARTIFICIAL_BASICO_TIC.jpg",
+      pdf: "/certificaciones/CERTIFICADO_INTRODUCCION_INTELIGENCIA_ARTIFICIAL_BASICO_TIC.pdf",
     },
     {
       name: "Introducción al Despliegue de Aplicaciones",
       issuer: "PLATZI",
       year: "2023",
-      preview: "src/assets/certificaciones/CERTIFICADO_INSTRODUCCION_DESPLIEGUE_APLICACIONES_PLATZI.jpg",
-      pdf: "src/assets/certificaciones/CERTIFICADO_INSTRODUCCION_DESPLIEGUE_APLICACIONES_PLATZI.pdf",
+      preview: "/certificaciones/CERTIFICADO_INSTRODUCCION_DESPLIEGUE_APLICACIONES_PLATZI.jpg",
+      pdf: "/certificaciones/CERTIFICADO_INSTRODUCCION_DESPLIEGUE_APLICACIONES_PLATZI.pdf",
     },
     {
-      name: "Curso de Pensamiento Lógico: Algoritmos y Diagramas de Flujo",
+      name: "Pensamiento Lógico",
       issuer: "PLATZI",
       year: "2023",
-      preview: "/certificados/ia_basico.jpg",
-      pdf: "/certificados/ia_basico.pdf",
-    },
-    {
-      name: "Curso de Pensamiento Lógico: Manejo de Datos, Estructuras y Funciones",
-      issuer: "PLATZI",
-      year: "2023",
-      preview: "/certificados/ia_basico.jpg",
-      pdf: "/certificados/ia_basico.pdf",
+      preview: "/certificaciones/CERTIFICADO_PENSAMIENTO_LOGICO_PLATZI.jpg",
+      pdf: "/certificaciones/CERTIFICADO_PENSAMIENTO_LOGICO_PLATZI.pdf",
     },
     {
       name: "Diseño y administracion de sitios web",
       issuer: "SENA",
       year: "2018",
-      preview: "src/assets/certificaciones/CERTIFICADO_DISEÑO_ADMINISTRACION_SITIOS_WEB_SENA.jpg",
-      pdf: "src/assets/certificaciones/CERTIFICADO_DISEÑO_ADMINISTRACION_SITIOS_WEB_SENA.pdf",
+      preview: "/certificaciones/CERTIFICADO_DISEÑO_ADMINISTRACION_SITIOS_WEB_SENA.jpg",
+      pdf: "/certificaciones/CERTIFICADO_DISEÑO_ADMINISTRACION_SITIOS_WEB_SENA.pdf",
     },
     
   ];
+
+
+  const activeCert = selectedCert !== null ? certifications[selectedCert] : null;
 
   return (
     <section id="education" className="py-20 gradient-section">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
+          {/* Título */}
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Educación y Certificaciones
@@ -93,6 +99,7 @@ const Education = () => {
             <div className="w-20 h-1 bg-accent mx-auto rounded-full"></div>
           </div>
 
+          {/* Educación */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
               <GraduationCap className="h-8 w-8 text-primary" />
@@ -119,128 +126,112 @@ const Education = () => {
             </div>
           </div>
 
+          {/* Certificaciones */}
           <div>
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
               <Award className="h-8 w-8 text-accent" />
               Certificaciones
             </h3>
 
-
-            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
               {certifications.map((cert, index) => (
-                <Card
+                <div
                   key={index}
-                  className="p-5 shadow-card hover:shadow-hover transition-all duration-300 hover:-translate-y-1"
+                  className="relative group cursor-pointer"
+                  onMouseEnter={() => setHoveredCert(index)} // solo hover
+                  onMouseLeave={() => setHoveredCert(null)}
+                  onClick={() => setSelectedCert(index)} // click abre modal
                 >
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 bg-accent/10 rounded-lg">
-                      <Award className="h-5 w-5 text-accent" />
+                  <Card className="p-5 shadow-card hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-accent/10 rounded-lg">
+                        <Award className="h-5 w-5 text-accent" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">{cert.name}</h4>
+                        <p className="text-sm text-muted-foreground">
+                          {cert.issuer}
+                        </p>
+                        <span className="text-xs text-accent font-semibold">
+                          {cert.year}
+                        </span>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">{cert.name}</h4>
-                      <p className="text-sm text-muted-foreground">
-                        {cert.issuer}
-                      </p>
-                      <span className="text-xs text-accent font-semibold">
-                        {cert.year}
-                      </span>
-                    </div>
-                  </div>
-                </Card>
+                  </Card>
+
+                  {/* 🖼️ Miniatura flotante (solo PC) */}
+                  <AnimatePresence>
+                    {hoveredCert === index && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.9, y: 10 }}
+                        transition={{ duration: 0.25 }}
+                        className="absolute left-1/2 -translate-x-1/2 bottom-full mb-3 z-50 hidden md:block"
+                      >
+                        <img
+                          src={cert.preview}
+                          alt={cert.name}
+                          className="w-56 h-auto rounded-lg shadow-lg border border-white/10"
+                        />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               ))}
-            </div> */}
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
-      {certifications.map((cert, index) => (
-        <div
-          key={index}
-          className="relative group cursor-pointer"
-          onMouseEnter={() => setSelectedCert(index)} // Hover en PC
-          onMouseLeave={() => setSelectedCert(null)} // Sale del hover
-          onClick={() => setSelectedCert(index)} // Tap en móvil
-        >
-          <Card className="p-5 shadow-card hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
-            <div className="flex items-start gap-3">
-              <div className="p-2 bg-accent/10 rounded-lg">
-                <Award className="h-5 w-5 text-accent" />
-              </div>
-              <div>
-                <h4 className="font-semibold mb-1">{cert.name}</h4>
-                <p className="text-sm text-muted-foreground">
-                  {cert.issuer}
-                </p>
-                <span className="text-xs text-accent font-semibold">
-                  {cert.year}
-                </span>
-              </div>
+              {/* 📄 Modal grande (para PC y móviles) */}
+              <AnimatePresence>
+                {activeCert && (
+                  <motion.div
+                    key="previewModal"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+                    onClick={() => setSelectedCert(null)}
+                  >
+                    <motion.div
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.9, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="relative bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-2xl w-full max-w-3xl mx-auto"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {/* Cerrar */}
+                      <button
+                        onClick={() => setSelectedCert(null)}
+                        className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 dark:hover:text-white"
+                      >
+                        ✕
+                      </button>
+
+                      {/* Imagen */}
+                      <motion.img
+                        src={activeCert.preview}
+                        alt={activeCert.name}
+                        initial={{ scale: 0.95, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
+                        className="w-full h-auto max-h-[80vh] object-contain bg-black/5 dark:bg-zinc-800 cursor-pointer"
+                        onClick={() => window.open(activeCert.pdf, "_blank")}
+                      />
+
+                      <div className="p-4 text-center">
+                        <h3 className="font-semibold text-xl">
+                          {activeCert.name}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          {activeCert.issuer} — {activeCert.year}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          </Card>
-
-          {/* 🖼️ Mini preview (hover en PC) */}
-          <AnimatePresence>
-            {selectedCert === index && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: 10 }}
-                transition={{ duration: 0.25 }}
-                className="absolute left-1/2 -translate-x-1/2 bottom-full mb-3 z-50 hidden md:block"
-              >
-                <img
-                  src={cert.preview}
-                  alt={cert.name}
-                  className="w-72 h-auto rounded-lg shadow-lg border border-white/10"
-                />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      ))}
-
-      {/* 📱 Modal para móviles */}
-      <AnimatePresence>
-        {selectedCert !== null && (
-          <motion.div
-            key="previewModal"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4 md:hidden"
-            onClick={() => setSelectedCert(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="bg-white dark:bg-zinc-900 rounded-lg overflow-hidden shadow-2xl max-w-sm w-full"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img
-                src={certifications[selectedCert].preview}
-                alt={certifications[selectedCert].name}
-                className="w-full h-auto"
-                onClick={() =>
-                  window.open(certifications[selectedCert].pdf, "_blank")
-                }
-              />
-              <div className="p-3">
-                <h3 className="font-semibold text-lg">
-                  {certifications[selectedCert].name}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {certifications[selectedCert].issuer} —{" "}
-                  {certifications[selectedCert].year}
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-
-
           </div>
         </div>
       </div>
