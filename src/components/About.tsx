@@ -45,11 +45,10 @@ const About = () => {
 
           <Card className="p-8 md:p-12 shadow-card mb-12">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Soy un desarrollador de software con 4 años de experiencia en el desarrollo de software e implementacion de herramientas digitales, especializado en JavaScript y frameworks como React y Node.js. 
-            </p>
+Soy un desarrollador de software con 4 años de experiencia en el desarrollo de software e implementación de herramientas digitales, con énfasis en JavaScript y frameworks como React y Node.js.            </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              He logrado desarrollar diferentes proyectos enfocados en necesidades puntuales de clientes, abarcando desde software empresarial y software a la medida hasta desarrollo de estrategias de marketing digital.
-              Me apasiona este mundo desde mi graducacion del colegio donde sabia que queria dedicarme al mundo tecnologico abrancando la mayoria de campos del mismo.
+             He logrado desarrollar diferentes proyectos enfocados en necesidades puntuales de clientes, abarcando desde software empresarial y software a la medida hasta desarrollo de estrategias de marketing digital.
+              Me apasiona este mundo desde mi graduación del colegio donde sabía que quería dedicarme al mundo tecnológico abarcando la mayoría de campos posibles.
             </p>
             {/* <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Me especializo en crear soluciones digitales escalables y eficientes utilizando tecnologías de acuerdo a los requerimientos presentados. 
