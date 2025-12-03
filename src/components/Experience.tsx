@@ -16,7 +16,7 @@ const Experience = () => {
       title: "Desarrollador",
       company: "Happy sleep",
       description:
-        "Desarrollo de software corporativos, cubriendo necesidades especificas de la empresa. Aprendizaje de buenas prácticas de desarrollo y trabajo en equipo ágil.",
+        "Desarrollo de software corporativos, cubriendo necesidades específicas de la empresa. Aprendizaje de buenas prácticas de desarrollo y trabajo en equipo ágil.",
       technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL","Node.js","bootstrap","WordPress","SQL Server"],
     },
     {
@@ -24,7 +24,7 @@ const Experience = () => {
       title: "Desarrollador (pasantias)",
       company: "Happy sleep",
       description:
-        "Desarrollo de software corporativos, cubriendo necesidades especificas de la empresa. Aprendizaje de buenas prácticas de desarrollo y trabajo en equipo ágil.",
+        "Desarrollo de software corporativos, cubriendo necesidades específicas de la empresa. Aprendizaje de buenas prácticas de desarrollo y trabajo en equipo ágil.",
       technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL","Node.js","bootstrap","WordPress","SQL Server"],
     },
     {
@@ -32,7 +32,7 @@ const Experience = () => {
       title: "Freelance",
       company: "",
       description:
-        "Creacion de software a la medida para emprendimeinto y clientes, abarcando desde sitios web hasta desarrollos de software. Gestión completa del ciclo de vida del desarrollo de software.",
+        "Creación de software a la medida para emprendimiento y clientes, abarcando desde sitios web hasta desarrollos de software. Gestión completa del ciclo de vida del desarrollo de software.",
       technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL","bootstrap"],
     },
      {
@@ -41,7 +41,7 @@ const Experience = () => {
       company: "Institucion universitaria EAM",
       description:
         "Perfil de trabajo enfocado en el apoyo en el área de sistemas, mantenimientos de computadores, corrección y soporte en los sistemas operativos y plataformas de la universidad.",
-      technologies: ["Redes", "Hardware de compuatdores", "Java","PHP"],
+      technologies: ["Redes", "Hardware de computadores", "Java","PHP"],
     },
   ];
 

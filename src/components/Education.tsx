@@ -27,7 +27,7 @@ const education = [
       institution: "SENA",
       period: "2022 - 2024",
       description:
-        "Formación avanzada en desarrollo de software, análisis de sistemas y gestión de proyectos. Proyecto final enfocado en el desarrollo de una plataforma web para la gestión de informacion.",
+        "Formación avanzada en desarrollo de software, análisis de sistemas y gestión de proyectos. Proyecto final enfocado en el desarrollo de una plataforma web para la gestión de información.",
     },
     {
       degree: "Tecnico en desarrollo de software",

@@ -75,12 +75,12 @@ const Hero = () => {
           </motion.h1>
 
           <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in-up [animation-delay:200ms]">
-            Creando soluciones innovadoras con tecnología practicas y eficientes.
+            Creando soluciones innovadoras con tecnología prácticas y eficientes.
           </p>
 
           <p className="text-lg text-white/80 mb-12 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">
             Asesor, planeador y desarrollador de soluciones digitales. Apasionado por resolver problemas y necesidades
-            con herramientas digitales y código de forma eficiente, versatil y escalable.
+            con herramientas digitales y código de forma eficiente, versátil y escalable.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center mb-12 animate-fade-in-up [animation-delay:600ms]">
