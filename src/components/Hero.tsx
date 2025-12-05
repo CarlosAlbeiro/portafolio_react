@@ -48,7 +48,7 @@ const Hero = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 gradient-hero opacity-90"></div>
+      <div className="absolute inset-0 gradient-hero opacity-70"></div>
       
       <div className="container mx-auto px-5 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
