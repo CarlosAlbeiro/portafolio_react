@@ -10,6 +10,6 @@ RUN npm run build
 FROM nginx:alpine
 # Copiamos los archivos compilados de la etapa anterior a la carpeta de Nginx
 COPY --from=builder /app/dist /usr/share/nginx/html
-# Exponemos el puerto 80 (el puerto por defecto de Nginx)
-EXPOSE 80
+# Exponemos el puerto 8082 (el puerto por defecto de Nginx)
+EXPOSE 8082
 CMD ["nginx", "-g", "daemon off;"]
