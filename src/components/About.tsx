@@ -27,103 +27,77 @@ const About = () => {
   ];
 
   return (
-     <motion.section 
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6 }}
-     
-     id="about" className="p-4 bg-white dark:bg-neutral-900 rounded-xl shadow-lg">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Sobre mí
-            </h2>
-            <div className="w-20 h-1 bg-accent mx-auto rounded-full"></div>
+    <section id="about" className="py-24 relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col items-center mb-16 text-center">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-4xl md:text-6xl font-black mb-4 tracking-tight"
+            >
+              Sobre <span className="gradient-text">mí</span>
+            </motion.h2>
+            <div className="w-24 h-1.5 bg-primary rounded-full mb-8"></div>
           </div>
 
-          <Card className="p-8 md:p-12 shadow-card mb-12">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-Soy un desarrollador de software con 4 años de experiencia en el desarrollo de software e implementación de herramientas digitales, con énfasis en JavaScript y frameworks como React y Node.js.            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-             He logrado desarrollar diferentes proyectos enfocados en necesidades puntuales de clientes, abarcando desde software empresarial y software a la medida hasta desarrollo de estrategias de marketing digital.
-              Me apasiona este mundo desde mi graduación del colegio donde sabía que quería dedicarme al mundo tecnológico abarcando la mayoría de campos posibles.
-            </p>
-            {/* <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Me especializo en crear soluciones digitales escalables y eficientes utilizando tecnologías de acuerdo a los requerimientos presentados. 
-              Mi enfoque se centra en el analisis y desarrollo de soluciones por medio de herramientas digitales y software, la experiencia del
-              usuario y la resolución de problemas reales.
-            </p> */}
-          </Card>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="glass p-8 md:p-12 rounded-[2rem] border border-white/10 shadow-2xl relative overflow-hidden group">
+                <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/30 transition-colors"></div>
+                
+                <p className="text-xl text-muted-foreground leading-relaxed mb-6">
+                  Soy un desarrollador de software con <span className="text-foreground font-bold italic text-glow">3 años de experiencia</span> en la creación e implementación de herramientas digitales de alto impacto.
+                </p>
+                <p className="text-lg text-muted-foreground/80 leading-relaxed mb-8">
+                  Mi enfoque se centra en el ecosistema JavaScript, dominando frameworks como <span className="text-primary font-semibold">React</span> y <span className="text-primary font-semibold">Node.js</span>. He liderado proyectos que van desde soluciones empresariales a medida hasta estrategias integrales de marketing digital.
+                </p>
+                
+                {/* <div className="flex flex-wrap gap-4 pt-4 border-t border-white/10">
+                  <div className="flex flex-col">
+                    <span className="text-3xl font-black text-primary">4+</span>
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground">Años Exp.</span>
+                  </div>
+                  <div className="w-px h-12 bg-white/10"></div>
+                  <div className="flex flex-col">
+                    <span className="text-3xl font-black text-primary">20+</span>
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground">Proyectos</span>
+                  </div>
+                  <div className="w-px h-12 bg-white/10"></div>
+                  <div className="flex flex-col">
+                    <span className="text-3xl font-black text-primary">100%</span>
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground">Calidad</span>
+                  </div>
+                </div> */}
+              </div>
+            </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {highlights.map((item, index) => (
-              <Card
-                key={index}
-                className="p-6 shadow-card hover:shadow-hover transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <item.icon className="h-6 w-6 text-primary" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {highlights.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="glass p-6 rounded-2xl border border-white/10 hover:border-primary/50 transition-all group"
+                >
+                  <div className="p-3 bg-primary/10 rounded-xl w-fit mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <item.icon className="h-6 w-6" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </motion.section>
-    // <section id="about" className="py-20 gradient-section">
-    //   <div className="container mx-auto px-4">
-    //     <div className="max-w-4xl mx-auto">
-    //       <div className="text-center mb-12">
-    //         <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-    //           Sobre mí
-    //         </h2>
-    //         <div className="w-20 h-1 bg-accent mx-auto rounded-full"></div>
-    //       </div>
-
-    //       <Card className="p-8 md:p-12 shadow-card mb-12">
-    //         <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-    //           Soy un desarrollador de software con de 4 años de experiencia en el desarrollo de software e implementacion de herramientas digitales, especializado en JavaScript y frameworks como React y Node.js. 
-    //         </p>
-    //         <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-    //           He logrado desarrollar diferentes proyectos enfocados en necesidades puntuales de clientes, abarcando desde software empresarial y software a la medida hasta desarrollo de estrategias de marketing digital.
-    //           Me apasiona este mundo desde mi graducacion del colegio donde sabia que queria dedicarme al mundo tecnologico abrancando la mayoria de campos del mismo.
-    //         </p>
-    //         {/* <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-    //           Me especializo en crear soluciones digitales escalables y eficientes utilizando tecnologías de acuerdo a los requerimientos presentados. 
-    //           Mi enfoque se centra en el analisis y desarrollo de soluciones por medio de herramientas digitales y software, la experiencia del
-    //           usuario y la resolución de problemas reales.
-    //         </p> */}
-    //       </Card>
-
-    //       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-    //         {highlights.map((item, index) => (
-    //           <Card
-    //             key={index}
-    //             className="p-6 shadow-card hover:shadow-hover transition-all duration-300 hover:-translate-y-1"
-    //           >
-    //             <div className="flex items-start gap-4">
-    //               <div className="p-3 bg-primary/10 rounded-lg">
-    //                 <item.icon className="h-6 w-6 text-primary" />
-    //               </div>
-    //               <div>
-    //                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-    //                 <p className="text-muted-foreground">{item.description}</p>
-    //               </div>
-    //             </div>
-    //           </Card>
-    //         ))}
-    //       </div>
-    //     </div>
-    //   </div>
-    // </section>
+    </section>
   );
 };
 

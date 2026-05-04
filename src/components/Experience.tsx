@@ -48,79 +48,55 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Experiencia Laboral
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tight">
+              Experiencia <span className="gradient-text">Laboral</span>
             </h2>
-            <div className="w-20 h-1 bg-accent mx-auto rounded-full"></div>
+            <div className="w-24 h-1.5 bg-primary rounded-full mx-auto"></div>
           </div>
 
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:transform md:-translate-x-1/2"></div>
-
-            {/* Experience Items */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {experiences.map((exp, index) => (
-              <div
+              <Card
                 key={index}
-                className={` relative mb-12 flex flex-col items-center md:items-start ${
-                  index % 2 === 0 ? "md:pr-1/2" : "md:pl-1/2 md:text-right"
-                }`}
+                className="glass p-6 border border-white/10 hover:border-primary/50 transition-all duration-300 flex flex-col group"
               >
-                <div
-                  className={`flex items-center gap-4 mb-4 ${
-                    index % 2 === 0 ? "" : "md:flex-row-reverse"
-                  }`}
-                >
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg">
-                    <Briefcase className="h-6 w-6 text-primary-foreground" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2.5 bg-primary/10 rounded-xl text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <Briefcase className="h-5 w-5" />
                   </div>
-                  
-                  <Card
-                    className={`p-6 shadow-card hover:shadow-hover transition-all duration-300 ${
-                      index % 2 === 0
-                        ? "md:mr-8 ml-8 md:ml-0"
-                        : "md:ml-8 ml-8 md:mr-0"
-                    }`}
-                  >
-                    <div className="flex items-center gap-3 mb-3 md:hidden">
-                      <div className="p-2 bg-primary/10 rounded-lg">
-                        <Briefcase className="h-5 w-5 text-primary" />
-                      </div>
-                      <span className="text-sm font-semibold text-accent">
-                        {exp.period}
-                      </span>
-                    </div>
-
-                    <span className="hidden md:inline-block text-sm font-semibold text-accent mb-2">
-                      {exp.period}
-                    </span>
-
-                    <h3 className="text-2xl font-bold mb-1">{exp.title}</h3>
-                    <p className="text-lg text-primary font-semibold mb-4">
-                      {exp.company}
-                    </p>
-                    <p className="text-muted-foreground mb-4">
-                      {exp.description}
-                    </p>
-                    <div
-                      className={`flex flex-wrap gap-2 ${
-                        index % 2 === 0 ? "" : "md:justify-end"
-                      }`}
-                    >
-                      {exp.technologies.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </Card>
+                  <span className="text-sm font-bold text-muted-foreground uppercase tracking-wider">
+                    {exp.period}
+                  </span>
                 </div>
-              </div>
+
+                <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">
+                  {exp.title}
+                </h3>
+                <p className="text-sm font-bold text-foreground/80 mb-4">
+                  {exp.company}
+                </p>
+                <p className="text-muted-foreground text-sm mb-6 flex-grow leading-relaxed">
+                  {exp.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-white/5">
+                  {exp.technologies.slice(0, 5).map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-2 py-0.5 bg-secondary/50 text-secondary-foreground text-[10px] uppercase font-bold rounded-md"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {exp.technologies.length > 5 && (
+                    <span className="text-[10px] text-muted-foreground font-bold self-center">
+                      +{exp.technologies.length - 5}
+                    </span>
+                  )}
+                </div>
+              </Card>
             ))}
           </div>
         </div>
