@@ -38,7 +38,7 @@ const Index = () => {
         <Skills />
         <Projects />
         <Education />
-        <Contact />
+        {/* <Contact /> */}
         <Footer />
       </div>
     </ThemeProvider>
