@@ -87,13 +87,13 @@ const Navbar = () => {
                   <Moon className="h-5 w-5" />
                 )}
               </Button>
-              <Button
+              {/* <Button
                 size="sm"
                 className="rounded-full px-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
                 onClick={() => scrollToSection("#contact")}
               >
                 Hablemos
-              </Button>
+              </Button> */}
             </div>
           </div>
 
